@@ -1,9 +1,9 @@
 package umc.Study.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import umc.Study.domain.common.BaseEntity;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Store extends BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

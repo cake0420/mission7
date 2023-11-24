@@ -1,21 +1,20 @@
 package umc.Study.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import umc.Study.domain.common.BaseEntity;
 import umc.Study.domain.mapping.MemberMission;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.BackingStoreException;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Mission extends BaseEntity {
 
+public class Mission extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

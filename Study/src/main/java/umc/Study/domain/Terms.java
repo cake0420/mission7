@@ -1,10 +1,10 @@
 package umc.Study.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import umc.Study.domain.common.BaseEntity;
 import umc.Study.domain.mapping.MemberAgree;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +13,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Terms extends BaseEntity{
 
+public class Terms extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

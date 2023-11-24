@@ -1,9 +1,9 @@
 package umc.Study.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 import umc.Study.domain.common.BaseEntity;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +12,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Review extends BaseEntity {
 
+public class Review extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
