@@ -1,10 +1,12 @@
-package umc.Study.domain;
+package umc.study.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
-import umc.Study.domain.common.BaseEntity;
-import umc.Study.domain.mapping.MemberMission;
+import lombok.extern.java.Log;
+import umc.study.domain.common.BaseEntity;
+import umc.study.domain.mapping.MemberMission;
 
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,17 +15,17 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-
 public class Mission extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String reward;
+    private Integer reward;
 
-    private String deadline;
+    private LocalDate deadline;
 
-    private Boolean missionSpec;
+    private String missionSpec;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")

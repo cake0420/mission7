@@ -1,6 +1,5 @@
-package umc.Study.apiPayload.exception;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.ConstraintViolationException;
+package umc.study.apiPayload.exception;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,11 +11,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import umc.Study.apiPayload.ApiResponse;
-import umc.Study.apiPayload.code.ErrorReasonDTO;
-import umc.Study.apiPayload.code.status.ErrorStatus;
+import umc.study.apiPayload.ApiResponse;
+import umc.study.apiPayload.code.ErrorReasonDTO;
+import umc.study.apiPayload.code.status.ErrorStatus;
 
-
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -37,8 +39,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
     }
 
 
-//    @Override
-
+    @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException e, HttpHeaders headers, HttpStatus status, WebRequest request) {
 

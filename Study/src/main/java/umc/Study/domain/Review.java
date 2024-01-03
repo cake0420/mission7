@@ -1,10 +1,9 @@
-package umc.Study.domain;
+package umc.study.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
-import umc.Study.domain.common.BaseEntity;
+import umc.study.domain.common.BaseEntity;
 
-import java.util.ArrayList;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,8 +11,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-
 public class Review extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,5 +30,5 @@ public class Review extends BaseEntity {
     private Store store;
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
-    private List<ReviewImage> reviewImageList = new ArrayList<>();
+    private List<ReviewImage> reviewImageList;
 }

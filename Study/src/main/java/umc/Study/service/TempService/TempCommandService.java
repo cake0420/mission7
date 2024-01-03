@@ -1,4 +1,4 @@
-package umc.Study.service.TempService;
+package umc.study.service.TempService;
 
 public interface TempCommandService {
 }

@@ -1,26 +1,24 @@
-package umc.Study.domain;
+package umc.study.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
-import umc.Study.domain.common.BaseEntity;
+import umc.study.domain.common.BaseEntity;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Builder
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class ReviewImage extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 1000)
     private String imageUrl;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "review_id")
     private Review review;
-
 }

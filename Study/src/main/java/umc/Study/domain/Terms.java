@@ -1,10 +1,10 @@
-package umc.Study.domain;
+package umc.study.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
-import umc.Study.domain.common.BaseEntity;
-import umc.Study.domain.mapping.MemberAgree;
+import umc.study.domain.common.BaseEntity;
+import umc.study.domain.mapping.MemberAgree;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,13 +13,12 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-
 public class Terms extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 20)
     private String title;
 
     private String body;
@@ -28,5 +27,4 @@ public class Terms extends BaseEntity {
 
     @OneToMany(mappedBy = "terms", cascade = CascadeType.ALL)
     private List<MemberAgree> memberAgreeList = new ArrayList<>();
-
 }
